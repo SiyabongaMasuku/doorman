@@ -22,22 +22,17 @@ public class password {
 				char letter = sPass.charAt(i);
 				if(Character.isLowerCase(letter)) {
 					sml++;
-					
 				}
 				if(Character.isUpperCase(letter)) {
 					cap++;
-					
 				}
 				if(Character.isDigit(letter)) {
 					dig++;
-					
 				}
-				
 				
 			} //close for loop
 			if(cap ==2 && sml == 2 && dig==2) {
 				System.out.println("VALID");
-				
 			}
 			else {
 				System.out.println("INVALID");
