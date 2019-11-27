@@ -1,12 +1,10 @@
-package com.smuthirdyear;
-
 import java.util.Scanner;
 
 public class password {
 
 	public static boolean pCheck() {
 
-		boolean status;// = false;
+		boolean valid;// = false;
 
 		Scanner in = new Scanner(System.in);
 		int sml = 0;// to hold small letters count
@@ -19,14 +17,13 @@ public class password {
 //			cleanbuffer = in.nextLine();
 //			System.out.println("******");
 //		}
-		
-		
+
 //		in.close();
 		int pl;// password length
 		pl = sPass.length();
 		if (pl > 6 || pl < 6) {
 //			System.out.println("INVALID");
-			status = false;
+			valid = false;
 		} else { // else 1
 			for (int i = 0; i < pl; i++) {
 				char letter = sPass.charAt(i);
@@ -46,28 +43,35 @@ public class password {
 			} // close for loop
 			if (cap == 2 && sml == 2 && dig == 2) {
 //				System.out.println("VALID");
-				status = true;
+				valid = true;
 
 			} else {// else 2
 //				System.out.println("INVALID");
-				status = false;
+				valid = false;
 			} // close else 2
 		} // close else 1
 
-		return status;
+		return valid;
 
 	}
 
 	public static void main(String[] args) {
 
-		while (!pCheck()) {
-			System.out.println("Please try again...");
+		int tryCount = 5; // try count to enter the password
 
+		while (!pCheck() && tryCount != 1) {
+//			while() {
+			tryCount--;
+			if (tryCount > 1) {
+				System.out.println(tryCount + " chances. Please try again...");
+			} else if (tryCount == 1) {
+				System.out.println("Last chance. Please try again!");
+			}
+//			}
 		}
-		System.out.println("Password created. Thank you.");
-		
-		
 
-}// main
+		System.out.println("********************");
+
+	}// main
 
 }// class
