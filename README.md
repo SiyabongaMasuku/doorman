@@ -1,5 +1,5 @@
 ### doorman
-password checker according to self-defined rules<br>
+password checker according to "defined rules"<br>
 (1) length of 6<br>
 (2) two capital letters, two small letters, and two numbers<br>
 
